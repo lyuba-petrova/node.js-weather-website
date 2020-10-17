@@ -108,8 +108,7 @@ app.get('*', (req, res) => {
     })
 })
 
-//console.log(process.env)
 app.listen(port, () => {
-    console.log('Server is up on port' + port)  // will be displayed in the Terminal
+    console.log('Server is up on port' + port)  
 })
  
