@@ -9,18 +9,18 @@ const geocode = (address, callback) => {
         } else if (body.features.length === 0) {
             callback('Unable to find location. Try another search.', undefined)
         } else {
-            callback(undefined, {
+            callback(
+                undefined, 
+                {
                 latitude: body.features[0].center[1],
                 longitude: body.features[0].center[0],
                 location: body.features[0].place_name
-            })
+                }
+            )
         }
     })
 }
 module.exports = geocode
-
-// Geocoding  //  Address -> Lat/Long -> Weather // Los%20Angeles
-// const geocodeUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/philadelphia.json?access_token=pk.eyJ1IjoibHl1YmEtcGV0cm92YSIsImEiOiJja2F2ang0ankwY3Q0MnF1OWkwaHU5eXEzIn0.YVt2W2xdWxNT-ST_Qal8HQ&limit=1'
 
 // request({ url: geocodeUrl, json: true }, (error, response) => {
 //     if (error) {
